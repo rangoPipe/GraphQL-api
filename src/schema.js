@@ -6,6 +6,15 @@ const typeDefs = `
 
     type Query {
         hello: String
+        consulta2 (parametro:String!): String
+        tasks: [Task]
+    }
+
+    type Task {
+        _id : ID,
+        title : String!,
+        description : String!,
+        number : Int
     }
 
 `;
