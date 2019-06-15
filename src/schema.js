@@ -17,6 +17,16 @@ const typeDefs = `
         number : Int
     }
 
+    type Mutation {
+        createTask(input:inputTask) : Task
+    }
+
+    input inputTask {
+        title : String!,
+        description : String!,
+        number : Int
+    }
+
 `;
 
 export default makeExecutableSchema({
