@@ -8,6 +8,7 @@ const typeDefs = `
         hello: String
         consulta2 (parametro:String!): String
         tasks: [Task]
+        getUsers: [User]
     }
 
     type Task {
@@ -17,14 +18,30 @@ const typeDefs = `
         number : Int
     }
 
+    type User {
+        _id : ID,
+        firstname : String!,
+        lastname : String!,
+        age : Int
+    }
+
     type Mutation {
         createTask(input:inputTask) : Task
+        createUser(input:inputUser) : User
+        removeUser(_id:ID): User,
+        modidyUser(_id:ID, input :inputUser) : User
     }
 
     input inputTask {
         title : String!,
         description : String!,
         number : Int
+    }
+
+    input inputUser {
+        firstname : String!,
+        lastname : String!,
+        age : Int
     }
 
 `;
